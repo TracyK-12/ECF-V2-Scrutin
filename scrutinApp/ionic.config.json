@@ -1,0 +1,7 @@
+{
+  "name": "scrutinApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

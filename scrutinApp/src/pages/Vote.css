@@ -1,0 +1,59 @@
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.members-table th,
+.members-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.members-table thead {
+  background-color: #f8f9fa;
+}
+
+.members-table th {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+}
+
+.members-table td {
+  font-size: 14px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.badge-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.back-button {
+  margin-left: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--ion-color-primary);
+}
