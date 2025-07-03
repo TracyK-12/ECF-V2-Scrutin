@@ -56,11 +56,7 @@ const Stats: React.FC = () => {
     <IonPage>
       <Nav title="Statistiques du scrutin" />
 
-      <IonButton fill="clear" onClick={() => history.push('/home')} className="back-button">
-        <IonIcon icon={arrowBack} slot="start" />
-        Retour à l’accueil
-      </IonButton>
-
+    
       <IonContent className="ion-padding">
         {loading || !stat ? (
           <IonSpinner name="dots" />
@@ -85,6 +81,11 @@ const Stats: React.FC = () => {
           </IonCard>
         )}
       </IonContent>
+        <IonButton fill="clear" onClick={() => history.push('/home')} className="back-button">
+        <IonIcon icon={arrowBack} slot="start" />
+        Retour à l’accueil
+      </IonButton>
+
 
       <Footer />
     </IonPage>
