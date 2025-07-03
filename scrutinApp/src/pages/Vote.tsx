@@ -1,4 +1,4 @@
-// src/pages/Votes.tsx
+
 import {
   IonPage,
   IonContent,

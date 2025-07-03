@@ -64,17 +64,22 @@ const Home: React.FC = () => {
     <div className="button-group">
       <IonButton
         color="primary"
+        // fonction fléchée pour éviter le problème de contexte, 
+        // Avec push, on peut naviguer vers la page de vote
+        // grace à l'ID du scrutin qui est passé dans l'URL pour recuperer les détails du scrutin
         onClick={() => history.push(`/vote/${scrutin.id}`)}
       >
         Voir
       </IonButton>
 
-      <IonButton
-        color="tertiary"
-        onClick={() => history.push(`/stats/${scrutin.id}`)}
-      >
-        Statistiques
-      </IonButton>
+     <IonButton
+  color="secondary"
+  expand="block"
+  onClick={() => history.push(`/stats/${scrutin.id}`)}
+>
+  Statistiques
+</IonButton>
+
     </div>
   </IonCardHeader>
 </IonCard>

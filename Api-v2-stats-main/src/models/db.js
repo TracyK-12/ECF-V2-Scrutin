@@ -96,6 +96,7 @@ async function initDb() {
   }
 }
 
+
 function getDb() {
   if (!db) {
     throw new Error("Database not initialized. Call initDb() first.");
