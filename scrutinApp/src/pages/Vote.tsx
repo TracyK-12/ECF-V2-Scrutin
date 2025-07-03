@@ -1,4 +1,4 @@
-
+// src/pages/Votes.tsx
 import {
   IonPage,
   IonContent,
@@ -11,7 +11,7 @@ import {
   IonSpinner,
   IonToast,
 } from '@ionic/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { arrowBack } from 'ionicons/icons';
@@ -38,7 +38,8 @@ const Votes: React.FC = () => {
 
 
 
-  const fetchMembers = () => {
+  
+  const fetchMembers = useCallback(() => {
     setLoading(true);
     fetch(`http://localhost:3000/api/v1/scrutins/${id}/members`)
       .then((res) => res.json())
@@ -50,7 +51,7 @@ const Votes: React.FC = () => {
         console.error('Erreur chargement membres :', err);
         setLoading(false);
       });
-  };
+  }, [id]);
 
   const handleVote = (memberId: number) => {
     fetch(`http://localhost:3000/api/v1/scrutins/${id}/members/${memberId}/vote`, {
@@ -66,19 +67,12 @@ const Votes: React.FC = () => {
 
   useEffect(() => {
     fetchMembers();
-  }, [id]);
+  }, [fetchMembers, id]);
 
   return (
    <IonPage>
   <Nav title="Liste des membres" />
-  <IonButton
-  fill="clear"
-  onClick={() => history.push('/home')}
-  className="back-button"
->
-  <IonIcon icon={arrowBack} slot="start" />
-  Retour à l’accueil
-</IonButton>
+ 
 
 
   <IonContent className="ion-padding">
@@ -130,7 +124,14 @@ const Votes: React.FC = () => {
     duration={2000}
     onDidDismiss={() => setShowToast(false)}
   />
-
+ <IonButton
+  fill="clear"
+  onClick={() => history.push('/home')}
+  className="back-button"
+>
+  <IonIcon icon={arrowBack} slot="start" />
+  Retour à l’accueil
+</IonButton>
   <Footer />
 </IonPage>
 
